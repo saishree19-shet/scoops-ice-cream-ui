@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+  <meta charset="UTF-8">
+  <title>Ice Cream Order</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fefefe;
+
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .image-section {
+      flex: 1;
+      background: url('https://static.vecteezy.com/system/resources/thumbnails/037/236/432/small_2x/ai-generated-beautuful-ice-cream-background-with-copy-space-free-photo.jpg') no-repeat center center;
+      background-size:cover;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 40px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #ff4081;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 10px;
+      margin-top: 5px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="image-section"></div>
+
+    <div class="form-section">
+      <h2>Place your order</h2>
+      <form id="orderForm">
+        <label for="customerName">Customer Name</label>
+        <input type="text" id="customerName" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required>
+        
+        <label for="Your order">Your order</label>
+        <input type="text" id="Your order" required>
+
+        <label for="iceCream">Ice Cream Flavor</label>
+        <select id="iceCream" required>
+          <option value="">Select a flavor</option>
+          <option value="Vanilla">Vanilla</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Strawberry">Strawberry</option>
+          <option value="Mango">Mango</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" required>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('customerName').value;
+      const phone = document.getElementById('phone').value;
+      const flavor = document.getElementById('iceCream').value;
+      const quantity = document.getElementById('quantity').value;
+
+      alert(`Thank you, ${name}! Your order for ${quantity} ${flavor} ice cream(s) has been placed.`);
+    });
+  </script>
+
+</body>
+</html>
